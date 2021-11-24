@@ -1,0 +1,55 @@
+footer{
+    background-color: $second_color;
+    padding: 50px 0;
+
+    .container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 30px;
+    }
+
+    #footer_infos{
+        p{
+            font-weight: 700;
+            margin-bottom: 5px;
+
+            &:last-child{
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    #footer_socialNetworks{
+        a{
+            display: inline-block;
+            line-height: 1;
+            margin-right: 10px;
+
+            &:last-child{
+                margin-right: 0;
+            }
+            
+            svg{
+                height: 40px;
+                position: relative;
+                bottom: 0;
+                transition: bottom .2s;
+
+                &:hover{
+                    bottom: 5px;
+                }
+            }
+        }
+    }
+
+
+
+
+
+    // Responsive
+    // 450
+    @media(max-width: 450px){
+        flex-direction: column;
+    }
+}

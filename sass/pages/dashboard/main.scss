@@ -1,0 +1,55 @@
+#main{
+    min-height: 100vh;
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 10px 30px 0 30px;
+    position: relative;
+    
+
+    // Register message
+    .registerMesssage{
+        color: #fff;
+        font-size: $font_title_small;
+        padding: 10px 20px;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+
+        &.success{
+            background-color: green;
+        }
+
+        &.error{
+            background-color: red;
+        }
+    }
+
+
+    // Top
+    .mainTop{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 30px;
+
+        h1{
+            color: $primary_color;
+            text-align: center;
+            font-size: $font_title;
+            font-weight: 500;
+        }
+    
+        .btnAddData{
+            color: #ffff;
+            border: 2px solid $third_color;
+            background-color: $third_color;
+            padding: 8px 15px;
+    
+            &:hover{
+                color: $third_color;
+                background-color: #fff;
+            }
+        }
+    }
+}

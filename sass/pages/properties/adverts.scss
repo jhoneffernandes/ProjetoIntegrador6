@@ -1,0 +1,457 @@
+#adverts{
+    display: grid;
+    grid-template-columns: 1fr;
+    column-gap: 60px;
+    box-sizing: border-box;
+    margin: 40px auto !important;
+    position: relative;
+
+    // Filter
+    #adverts_filter{
+        width: 250px;
+        background-color: $primary_color;
+        border-radius: $borderRadius_default;
+        box-sizing: border-box;
+        padding: 20px;
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        form{
+            // Two column
+            .adverts_filter_twoColumn{
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                column-gap: 20px;
+            }
+
+            // Label
+            label{
+                color: #fff;
+                font-size: $font_default;
+                font-weight: 300;
+                display: block;
+                margin-bottom: 3px;
+            }
+
+            // Select label
+            .adverts_filter_selectLabel{
+                select{
+                    option{
+                        font-size: .8rem;
+                    }
+                }
+            }
+
+            // Input, select
+            .adverts_filter_inputLabel,
+            .adverts_filter_selectLabel{
+                margin-bottom: 20px;
+
+                input, select{
+                    width: 100%;
+                    border-radius: $borderRadius_default;
+                    box-sizing: border-box;
+                    padding: 5px;
+                }
+            }
+
+            // Action button
+            #adverts_filter_actBtn{
+                display: block;
+                width: 100%;
+                color: #fff;
+                background-color: #3498db;
+                font-size: $font_small;
+                padding: 5px 0;
+
+                &:hover{
+                    background-color: #2980b9;
+                }
+            }
+        }
+
+        // Class - fixed
+        &.adverts_filter_fixed{
+            position: fixed;
+            bottom: initial !important;
+        }
+    }
+
+    // Posts / adverts
+    #adverts_posts{
+        grid-column: 2/3;
+        
+        // Post
+        .adverts_posts_post{
+            display: flex;
+            column-gap: 15px;
+            background-color: rgb(240, 240, 240);
+            box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+            margin-bottom: 50px;
+
+            &:last-child{margin-bottom: 0;}
+
+            // Carousel
+            .adverts_posts_post_carousel{
+                min-width: 220px;
+                max-width: 240px;
+                
+                // Slider
+                .adverts_posts_post_carousel_slider{
+                    height: 100%;
+
+                    img{
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+            }
+
+
+            // Infos
+            .adverts_posts_post_infos{
+                width: 100%;
+                box-sizing: border-box;
+                padding: 10px 10px 10px 0;
+
+                > div{
+                    margin-bottom: 20px;
+
+                    &:last-child{
+                        margin-bottom: 0;
+                    }
+                }
+                
+                // Columns
+                .adverts_posts_post_infos_columns{
+                    display: flex;
+                    gap: 20px;
+                }
+                // Two columns and hr
+                .adverts_posts_post_infos_twoColumnhr{
+                    display: grid;
+                    grid-template-columns: max-content 80px max-content;
+
+                    hr{
+                        width: 1px;
+                        height: 100%;
+                        background-color: #7c7c7c;
+                        margin: 0 auto;
+                    }
+                }
+
+
+                // Info || text
+                .adverts_posts_post_infos_info{
+                    // Text
+                    .adverts_posts_post_infos_info_text{
+                        color: $primary_color;
+                        font-size: $font_default;
+                        font-weight: 600;
+                    }
+                    
+                    // Small text
+                    .adverts_posts_post_infos_info_smallText{
+                        color: #7c7c7c;
+                        font-size: $font_small;
+                        font-weight: 600;
+                    }
+
+                    p:nth-child(2){
+                        margin-top: 3px;
+                    }
+
+                    // Info icon
+                    &.adverts_posts_post_infos_info_icon{
+                        display: flex;
+
+                        svg{
+                            height: 20px;
+                            margin-right: 5px;
+                            position: relative;
+                            top: .5px;
+                        }
+                        
+                        // Small text
+                        .adverts_posts_post_infos_info_smallText{
+                            color: $primary_color;
+                        }
+                    }
+                }
+            }
+
+
+            // Last column
+            .adverts_posts_post_lastColumn{
+                min-width: max-content;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+                justify-content: flex-end;
+                padding: 10px 15px 10px 0;
+
+                // Featured stamp
+                .adverts_posts_post_lastColumn_featuredStamp{
+                    font-size: $font_small;
+                    line-height: 1;
+                    color: #7c7c7c;
+                    border: 1px solid #7c7c7c;
+                    border-radius: 20px;
+                    padding: 4px 8px;
+                }
+
+                // Bottom content
+                .adverts_posts_post_lastColumn_bt{
+                    display: flex;
+                    align-items: center;
+                    column-gap: 10px;
+
+                    button{
+                        padding: 0;
+                    }
+
+                    // Favorite btn
+                    #adverts_posts_post_lastColumn_bt_favoriteBtn{
+                        display: flex;
+                        border: 1px solid $primary_color;
+                        padding: 9px 9px 8px 9px;
+                        border-radius: 50%;
+
+                        svg{
+                            height: 15px;
+                        }
+                        
+                        &:hover{
+                            fill: $second_color;
+                            border-color: $second_color;
+                        }
+                    }
+
+                    // Action btn
+                    #adverts_posts_post_lastColumn_bt_actBtn{
+                        color: #fff;
+                        background-color: $second_color;
+                        border-radius: $borderRadius_default;
+                        padding: 8px 15px;
+                    }
+                }
+            }
+        }
+    }
+
+    // Scroll top button
+    #adverts_srollTopBtn{
+        width: 30px;
+        height: 30px;
+        display: none;
+        border-radius: 50%;
+        background-color: $second_color;
+        box-shadow: 0 0 3px black;
+        opacity: 0;
+        box-sizing: content-box;
+        padding: 3px;
+        position: fixed;
+        bottom: 5px;
+        right: 8px;
+        z-index: 99;
+        transition: opacity .3s;
+
+        svg{
+            width: 30px;
+            color: black;
+            position: relative;
+            bottom: 1px;
+        }
+    }
+
+
+
+
+
+    // Responsive
+    // 1340
+    @media(max-width: 1340px){
+        padding: 0 20px;
+
+        
+    }
+
+    // 1150
+    @media(max-width: 1150px){
+         // Posts / adverts
+        #adverts_posts{
+            // Post
+            .adverts_posts_post{
+                // Infos
+                .adverts_posts_post_infos{
+                    // Two columns and hr
+                    .adverts_posts_post_infos_twoColumnhr{
+                        display: grid;
+                        grid-template-columns: 1fr;
+                        row-gap: 19px;
+
+                        hr{
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // 1020
+    @media(max-width: 1020px){
+        grid-template-columns: 200px 1fr;
+        column-gap: 40px;
+
+        // Filter
+        #adverts_filter{
+            width: 200px;
+        }
+
+        // Posts / adverts
+        #adverts_posts{
+            // Post
+            .adverts_posts_post{
+                display: grid;
+                grid-template-columns: max-content 1fr;
+
+                // Carousel
+                .adverts_posts_post_carousel{
+                    grid-row: 1/3;
+                }
+
+                // Infos
+                .adverts_posts_post_infos{
+                    padding: 10px 15px 10px 0;
+                }
+
+                // Last column
+                .adverts_posts_post_lastColumn{
+                    grid-column: 2/3;
+                    flex-direction: row;
+                    align-items: center;
+
+                    // Featured stamp
+                    .adverts_posts_post_lastColumn_featuredStamp{
+                        font-size: $font_small;
+                        line-height: 1;
+                        color: #7c7c7c;
+                        border: 1px solid #7c7c7c;
+                        border-radius: 20px;
+                        padding: 4px 8px;
+                    }
+                }
+            }
+        }
+    }
+
+    // 775
+    @media(max-width: 775px){
+        // Posts / adverts
+        #adverts_posts{
+            // Post
+            .adverts_posts_post{
+                display: grid;
+                grid-template-columns: 1fr;
+
+                // Carousel
+                .adverts_posts_post_carousel{
+                    min-width: initial;
+                    max-width: initial;
+                    grid-row: initial;
+                }
+
+                // Infos
+                .adverts_posts_post_infos{
+                    padding: 10px 15px;
+                }
+
+                // Last column
+                .adverts_posts_post_lastColumn{
+                    grid-column: initial;
+                    flex-direction: row;
+                    align-items: center;
+                    padding: 10px 15px;
+
+                    // Featured stamp
+                    .adverts_posts_post_lastColumn_featuredStamp{
+                        font-size: $font_small;
+                        line-height: 1;
+                        color: #7c7c7c;
+                        border: 1px solid #7c7c7c;
+                        border-radius: 20px;
+                        padding: 4px 8px;
+                    }
+                }
+            }
+        }
+    }
+
+    // 600
+    @media(max-width: 600px){
+        grid-template-columns: 1fr !important;
+        row-gap: 50px;
+
+        // Filter
+        #adverts_filter{
+            width: initial;
+            position: relative;
+
+            form{
+                display: flex;
+                column-gap: 30px;
+                justify-content: center;
+                flex-wrap: wrap;
+
+                .adverts_filter_selectLabel{
+                    min-width: 70px;
+                    width: max-content;
+                }
+            }
+        }
+
+        // Posts / adverts
+        #adverts_posts{
+            grid-column: 1/2;
+            
+            // Post
+            .adverts_posts_post{
+                display: grid;
+                grid-template-columns: 1fr;
+
+                // Carousel
+                .adverts_posts_post_carousel{
+                    min-width: initial;
+                    max-width: initial;
+                    grid-row: initial;
+                }
+
+                // Infos
+                .adverts_posts_post_infos{
+                    padding: 10px 15px;
+                }
+
+                // Last column
+                .adverts_posts_post_lastColumn{
+                    grid-column: initial;
+                    flex-direction: row;
+                    align-items: center;
+                    padding: 10px 15px;
+
+                    // Featured stamp
+                    .adverts_posts_post_lastColumn_featuredStamp{
+                        font-size: $font_small;
+                        line-height: 1;
+                        color: #7c7c7c;
+                        border: 1px solid #7c7c7c;
+                        border-radius: 20px;
+                        padding: 4px 8px;
+                    }
+                }
+            }
+        }
+    }
+}

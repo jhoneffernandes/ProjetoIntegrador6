@@ -1,0 +1,6 @@
+{
+    "scripts": {
+        "sass": "sass --watch sass/style.scss css/style.css --style compressed",
+        "sassdash": "sass --watch sass/pages/dashboard/style.scss css/styledash.css --style compressed"
+    }
+}

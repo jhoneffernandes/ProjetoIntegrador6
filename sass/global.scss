@@ -1,0 +1,46 @@
+section{
+    margin-bottom: 60px !important;
+
+    h1{
+        text-align: center;
+        font-size: $font_title;
+        font-weight: 500;
+        margin-bottom: 30px;
+    }
+}
+
+.container{
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+button{
+    font-size: $font_default;
+    font-weight: 500;
+    border-radius: $borderRadius_default;
+}
+
+input, textarea, select{
+    border: 2px solid transparent;
+    color: $primary_color;
+    font-size: .8rem;
+    
+    &::placeholder{
+        font-weight: 600;
+    }
+
+    &:focus{
+        border: 2px solid $second_color;
+    }
+}
+
+
+
+
+// Responsive
+// 1240
+@media(max-width: 1240px){
+    .container{
+        margin: 0 20px;
+    }
+}

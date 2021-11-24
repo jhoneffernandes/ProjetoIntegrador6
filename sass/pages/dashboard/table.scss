@@ -1,0 +1,79 @@
+.tableDatas{
+    width: 100%;
+    box-shadow: 0px 0 3px 0px $primary_color_rgbaDefault;
+    background-color: #f2f2f3;
+    
+    table{
+        width: 100%;
+        border-collapse: collapse;
+
+        thead{
+            tr{
+                background-color: $second_color;
+    
+                th{
+                    text-align: left;
+                    font-size: $font_default;
+                    padding: 10px;
+                }
+            }
+        }
+    
+        tbody{
+            border-bottom: 2px solid $second_color;
+            
+            tr{
+                background-color: #fff;
+                
+                &:nth-child(even){
+                    background-color: #e2e2e2;
+                }
+    
+                &:hover{
+                    background-color: #b3b3b3;
+                }
+    
+                td{
+                    font-size: $font_default;
+                    padding: 10px;
+    
+                    // Actions
+                    &.tableDatas_actions{
+                        width: 80px;
+                        text-align: center;
+                        column-gap: 8px;
+    
+                        button, a{
+                            height: 20px;
+                            position: relative;
+
+                            svg{
+                                height: 20px;
+                                cursor: pointer;
+        
+                                &:nth-child(1){
+                                    position: relative;
+                                    top: 1px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+
+
+
+    // Responsive
+    // 800
+    @media(max-width: 800px){
+        overflow-x: scroll;
+
+        table{
+            min-width: 800px;
+        }
+    }
+}

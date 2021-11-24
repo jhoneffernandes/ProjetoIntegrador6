@@ -1,0 +1,12 @@
+body{
+    display: grid;
+    grid-template-columns: var(--headerWidth, 0) 1fr;
+
+    header{
+        grid-column: 1/2;
+    }
+
+    main{
+        grid-column: 2/3;
+    }
+}

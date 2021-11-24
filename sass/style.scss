@@ -1,0 +1,32 @@
+// Reset
+@import "reset.scss";
+
+// Colors
+@import "variables.scss";
+
+// Global
+@import "global.scss";
+
+
+
+// Header
+@import "header.scss";
+
+
+
+// Pages
+    // Index
+    @import "pages/index/adverts.scss";
+    @import "pages/index/callEmail.scss";
+    @import "pages/index/message.scss";
+// ====
+    // Properties
+    @import "pages/properties/adverts.scss";
+// ===
+    // Contact
+    @import "pages/contact/form.scss";
+
+
+
+// Footer
+@import "footer.scss";
